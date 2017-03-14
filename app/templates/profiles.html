@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style type="text/css">
+            #name{width: 100%; background-color: rgb(245,245,245); border-bottom-style: solid; border-color: rgb(221,221,221);padding-left: 0.5cm;}
+            #pdetails{width: 100%;padding-left: 0.5cm; border-top-style: solid;border-top-width: thin; border-bottom-style: solid;border-bottom-width: thin;border-color: rgb(221,221,221)}
+            #dimg{float: left; width: 16%; border-style: solid; border-color: rgb(221,221,221); border-radius: 5px;padding-left: 0.1cm;padding-top: 0.1cm; padding-bottom: 0.1cm; padding-right: 0.1cm;}
+            #dinfo{ float: right;width: 40%; border-style: solid;  border-color: rgb(221,221,221); border-radius: 5px;}
+            #date{padding-left: 0.5cm;}
+            #desc{padding-left: 0.5cm;}
+        </style>
+        <title>Profiles</title>
+ 
+    </head>
+    <body>
+         <h1>Profiles</h1>
+         {% for item in items %}
+         <div id=pro>
+         <div id=dimg>
+           <img src="{{ img }}"> </img>
+   	     </div>
+
+   	     <div id=dinfo>
+     	     <div id=name>
+        	   <p><b> {{ firstname }} {{ lastname }}</b></p>
+    	      </div>   	
+    	      <div id=date>
+        	    <p>Profile Created on: {{ date }}</p>
+    	      </div>
+
+    	      <div id=pdetails>
+           	<p><b>Username:</b> {{ username }}</p>
+           	<p><b>User ID:</b> {{ id }}</p>
+           	<p><b>Gender:</b> {{ gender }}</p>
+           	<p><b>Age:</b> {{ age }}</p>
+        	
+          	</div> 
+          	<div id=desc>
+     	      <p>{{ bio }}</p>
+          	</div>
+    	
+	         </div>
+	         </div>
+      {% endfor %}  
+         
+ 
+    </body>
+
+</html>

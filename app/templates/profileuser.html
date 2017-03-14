@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>Profiles</title>
+ 
+    </head>
+    <body>
+         <h1>Profiles</h1>
+         <div id=dimg>
+        <img src="{{ img }}"> </img>
+   	</div>
+
+   	<div id=dinfo>
+     	<div id=name>
+        	<p><b> {{ firstname }} {{ lastname }}</b></p>
+    	</div>   	
+    	<div id=date>
+        	<p>Profile Created on: {{ date }}</p>
+    	</div>
+
+    	<div id=pdetails>
+        	<p><b>Username:</b> {{ username }}</p>
+        	<p><b>User ID:</b> {{ id }}</p>
+        	<p><b>Gender:</b> {{ gender }}</p>
+        	<p><b>Age:</b> {{ age }}</p>
+        	
+    	</div> 
+     	<div id=desc>
+     	   <p>{{ bio }}</p>
+    	</div>
+	</div>
+        
+         
+ 
+    </body>
+
+</html>
