@@ -47,21 +47,18 @@ def profiles():
     
 @app.route("/profile/<userid>")
 def profile(userid):
-    users = db.session.query(UserProfile).all()
-    for UserProfile in users:
-        if userid == UserProfile.getid():
-            img = UserProfile.img
-            date = UserProfile.date
-            username = UserProfile.username
-            firstname = UserProfile.firstname
-            lastname = UserProfile.lastname
-            gender = UserProfile.gender
-            age = UserProfile.age
-            bio = UserProfile.bio
-            password = UserProfile.password
-    
-    
-            return render_template("profileuser.html", firstname=firstname, lastname=lastname, username=username, password=password, age=age, bio=bio, img=img, date=date, gender=gender)
+    user = db.session.query(UserProfile).filter_by(id=userid).one()
+    id = user.id
+    img = user.img
+    date = user.date
+    username = user.username
+    firstname = user.first_name
+    lastname = user.last_name
+    gender = user.gender
+    age = user.age
+    bio = user.bio
+    password = user.password
+    return render_template("profileuser.html",id=id, firstname=firstname, lastname=lastname, username=username, password=password, age=age, bio=bio, img=img, date=date, gender=gender)
     
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0",port="8080")

@@ -2,10 +2,11 @@
 <html lang="en">
  <head>
   <style type="text/css">
-   #name{width: 100%; background-color: rgb(245,245,245); border-bottom-style: solid; border-color: rgb(221,221,221);padding-left: 0.5cm;}
+   #name{ background-color: rgb(245,245,245); border-bottom-style: solid; border-color: rgb(221,221,221);padding-left: 0.5cm;}
    #pdetails{width: 100%;padding-left: 0.5cm; border-top-style: solid;border-top-width: thin; border-bottom-style: solid;border-bottom-width: thin;border-color: rgb(221,221,221)}
-   #dimg{float: left; width: 16%; border-style: solid; border-color: rgb(221,221,221); border-radius: 5px;padding-left: 0.1cm;padding-top: 0.1cm; padding-bottom: 0.1cm; padding-right: 0.1cm;}
+   #dimg{float: left; border-style: solid; border-color: rgb(221,221,221); border-radius: 5px;padding-left: 0.1cm;padding-top: 0.1cm; padding-bottom: 0.1cm; padding-right: 0.1cm;}
    #dinfo{ float: right;width: 40%; border-style: solid;  border-color: rgb(221,221,221); border-radius: 5px;}
+   #dcont{ background-color: rgb(245,245,245); float: left;width: 60%; border-style: solid;  border-color: rgb(221,221,221); border-radius: 5px;}
    #date{padding-left: 0.5cm;}
    #desc{padding-left: 0.5cm;}
   </style>
@@ -14,14 +15,14 @@
  <body>
   <h1>Profiles</h1>
    {% for UserProfile in users %}
-   <div id=container>
+   <div id=dcont>
     <div id=dimg>
      <img src="{{ UserProfile.img }}"> </img>
     </div>
 
    <div id=dinfo>
     <div id=name>
-     <p><b> {{ UserProfile.firstname }} {{ UserProfile.lastname }}</b></p>
+     <p> <h2><b>{{ UserProfile.first_name }} {{ UserProfile.last_name }}</b></h2></p>
     </div>   	
     <div id=date>
      <p>Profile Created on: {{ UserProfile.date }}</p>
