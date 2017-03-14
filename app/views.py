@@ -6,7 +6,7 @@ from app import app
 from app import db 
 from app.models import UserProfile 
 from models import UserProfile
-from datetime import datetime
+import datetime
 from forms import ProfileForm 
 
 @app.route("/")
@@ -24,7 +24,7 @@ def addprofile():
     flash('File uploaded')
     
     img = "./static/uploads/" + filename
-    date = datetime.date
+    date = str(datetime.date.today())
     username = form.username.data
     firstname = form.firstname.data
     lastname = form.lastname.data
@@ -38,7 +38,7 @@ def addprofile():
     db.session.commit()
     
     
-    return render_template(url_for(profiles()))
+    return render_template(url_for('profiles'))
     
 @app.route("/profiles")
 def profiles():
