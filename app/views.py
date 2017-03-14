@@ -3,29 +3,37 @@ from flask import render_template, request, redirect, url_for, flash
 import os
 from werkzeug.utils import secure_filename
 from app import app
-img="./static/uploads/temp.png"
+from app import db 
+from app.models import UserProfile 
+from models import UserProfile
+from datetime import datetime
+    
 
-
-
-@app.route("/addfile", methods=['POST', 'GET'])
-def addfile():
+    
+@app.route("/profile", methods=['GET', 'POST'])
+def addprofile():
     filefolder = app.config["UPLOAD_FOLDER"]
 
     file = request.files['picture']
     filename = secure_filename(file.filename)
     file.save(os.path.join(filefolder, filename))
     flash('File uploaded')
+    
     img = "./static/uploads/" + filename
-    return render_template("profile.html", img=img)
+    date = datetime.date
+    username = form.username.data
+    firstname = form.firstname.data
+    lastname = form.lastname.data
+    gender = form.gender.data
+    age = form.age.data
+    bio = form.bio.data
+    password = form.password.data
     
-@app.route('/')
-def home():
-    return render_template("base.html")
-    
-@app.route("/profile")
-def addprofile():
-    
-    return render_template("profile.html", img=img)
+    user = UserProfile(first_name=firstname, last_name=lastname, username=username, password=password, age=age, bio=bio, img=img, date=date, gender=gender)
+    db.session.add(user)
+    db.session.commit()
+    quit()
+    return render_template("profiles.html", img=img)
     
 @app.route("/profiles")
 def profiles():
