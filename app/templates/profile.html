@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>New Profile</title>
+ 
+    </head>
+    <body>
+         <h1>New Profile</h1>
+         <p>Please complete this form</p>
+        <img src="{{ img }}"></img>
+        <form method="post" action="/addfile" enctype="multipart/form-data">
+            <label for="">Profile Picture</label>
+            <input type="file" name="picture"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        <form method="get" action="/profile">
+            <label>User Name</label>
+            <input type="text" name="username" value="JhonDoe"/><br/>
+            <label for="">First Name</label>
+            <input type="text" name="firstname" value="John"/><br/>
+            <label for="">Last Name</label>
+            <input type="text" name="lastname" value="Doe"/><br/>
+            <label for="">Gender</label><br/>
+            <input type="radio" name="gender" value="male" checked>Male<br/>
+            <input type="radio" name="gender" value="female" >Female<br/>
+            <label for="">Age</label>
+            <input type="number" name="age" min="1" max="105"/><br/>
+            <label for="">Biography</label><br/>
+            <textarea name="bio" rows="5" cols="30">A short biography</textarea><br/>
+            <input type="submit" value="Submit"/>
+        </form>
+         
+ 
+    </body>
+
+</html>
