@@ -8,11 +8,11 @@
     <body>
          <h1>New Profile</h1>
          <p>Please complete this form</p>
-        <img src="{{ img }}"></img>
-        <form method="post" action="/addfile" enctype="multipart/form-data">
+        
+        <form method="post" action="/profile" enctype="multipart/form-data">
             <label for="">Profile Picture</label>
             <input type="file" name="picture"/>
-            <input type="submit" value="Submit"/>
+            
        
             <label>User Name</label>
             <input type="text" name="username" value="JhonDoe"/><br/>
@@ -25,7 +25,7 @@
             <label for="">Gender</label><br/>
             <input type="radio" name="gender" value="male" checked>Male<br/>
             <input type="radio" name="gender" value="female" >Female<br/>
-            <label for="">Age</label>
+            <label for="" value="20">Age</label>
             <input type="number" name="age" min="1" max="105"/><br/>
             <label for="">Biography</label><br/>
             <textarea name="bio" rows="5" cols="30">A short biography</textarea><br/>

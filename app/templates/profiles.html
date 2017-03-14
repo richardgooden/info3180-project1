@@ -14,29 +14,29 @@
     </head>
     <body>
          <h1>Profiles</h1>
-         {% for item in items %}
-         <div id=pro>
+         {% for UserProfile in users %}
+         <div id=container>
          <div id=dimg>
-           <img src="{{ img }}"> </img>
+           <img src="{{ UserProfile.img }}"> </img>
    	     </div>
 
    	     <div id=dinfo>
      	     <div id=name>
-        	   <p><b> {{ firstname }} {{ lastname }}</b></p>
+        	   <p><b> {{ UserProfile.firstname }} {{ UserProfile.lastname }}</b></p>
     	      </div>   	
     	      <div id=date>
-        	    <p>Profile Created on: {{ date }}</p>
+        	    <p>Profile Created on: {{ UserProfile.date }}</p>
     	      </div>
 
     	      <div id=pdetails>
-           	<p><b>Username:</b> {{ username }}</p>
-           	<p><b>User ID:</b> {{ id }}</p>
-           	<p><b>Gender:</b> {{ gender }}</p>
-           	<p><b>Age:</b> {{ age }}</p>
+           	<p><b>Username:</b> {{ UserProfile.username }}</p>
+           	<p><b>User ID:</b> {{ UserProfile.id }}</p>
+           	<p><b>Gender:</b> {{ UserProfile.gender }}</p>
+           	<p><b>Age:</b> {{ UserProfile.age }}</p>
         	
           	</div> 
           	<div id=desc>
-     	      <p>{{ bio }}</p>
+     	      <p>{{ UserProfile.bio }}</p>
           	</div>
     	
 	         </div>
