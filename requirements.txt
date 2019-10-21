@@ -11,7 +11,7 @@ Pillow==2.3.0
 SQLAlchemy==1.1.6
 SecretStorage==2.0.0
 WTForms==2.1
-Werkzeug==0.12
+Werkzeug==0.15.3
 alembic==0.9.1
 appdirs==1.4.3
 argparse==1.2.1
